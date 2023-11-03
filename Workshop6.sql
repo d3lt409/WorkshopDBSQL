@@ -119,12 +119,21 @@ inner join publicacion p on c.idPublicacion = p.idPublicacion
 	AND c.idUsuario = p.idUsuario
 inner join usuario u on p.idUsuario = u.idUsuario;
 
+1, "Hola pu"
+
+1, "comt", 1
+2, "comntser", 1
+
+1,"Hola pu", 1, "comt", 1
+1, "Hola pu",2, "comntser", 1
 
 -- DIECISEISAVO PUNTO
-select p.idPublicacion,p.Titulo,p.FechaPublicacion, count(*) num_comentarios
+select p.idPublicacion,p.Titulo, count(*) num_comentarios
 from publicacion p 
 inner join comentario c on p.idPublicacion = c.idPublicacion
-group by p.idPublicacion,p.Titulo,p.FechaPublicacion order by num_comentarios desc limit 3;
+group by p.idPublicacion,p.Titulo 
+order by num_comentarios desc 
+limit 3;
 
 
 
