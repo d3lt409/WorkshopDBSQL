@@ -121,9 +121,10 @@ inner join usuario u on p.idUsuario = u.idUsuario;
 
 
 -- DIECISEISAVO PUNTO
-select * from publicacion p, comentario c
-
-desc comentario;
+select p.idPublicacion,p.Titulo,p.FechaPublicacion, count(*) num_comentarios
+from publicacion p 
+inner join comentario c on p.idPublicacion = c.idPublicacion
+group by p.idPublicacion,p.Titulo,p.FechaPublicacion order by num_comentarios desc limit 3;
 
 
 
